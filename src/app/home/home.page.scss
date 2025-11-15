@@ -1,27 +1,38 @@
-#container {
+@use '../../theme/variables.scss' as *;
+
+ion-content {
+  --background: transparent;
+  padding: 18px;
+}
+
+.hero {
+  display: grid;
+  gap: 12px;
+}
+
+.banner {
+  background: linear-gradient(90deg, var(--ion-color-primary), #8540e0);
+  color: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.option-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  box-shadow: var(--shadow-base);
+  cursor: pointer;
 }

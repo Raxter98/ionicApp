@@ -1,0 +1,25 @@
+@use '../../theme/variables.scss' as *;
+
+ion-content {
+  padding: 16px;
+}
+
+.pending-list {
+  display: grid;
+  gap: 12px;
+}
+
+.pending-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow-base);
+  position: relative;
+}
+
+.pending-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}

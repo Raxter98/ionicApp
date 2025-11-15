@@ -1,0 +1,26 @@
+@use '../../theme/variables.scss' as *;
+
+ion-content {
+  padding: 16px;
+}
+
+.profile-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--ion-color-primary), #7b4be8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.profile-details {
+  flex: 1;
+}

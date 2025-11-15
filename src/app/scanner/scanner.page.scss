@@ -1,0 +1,15 @@
+@use '../../theme/variables.scss' as *;
+
+ion-content {
+  padding: 16px;
+}
+
+.scanner-area {
+  height: 320px;
+  background: linear-gradient(180deg, rgba(111,43,220,0.08), rgba(255,210,77,0.04));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-base);
+}

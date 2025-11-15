@@ -1,0 +1,43 @@
+@use '../../theme/variables.scss' as *;
+
+ion-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: var(--shadow-base);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.brand h1 {
+  margin: 0;
+  color: var(--ion-color-primary);
+  font-size: 28px;
+}
+
+/* Formularios */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+ion-input.custom {
+  --padding-start: 12px;
+  --padding-end: 12px;
+}

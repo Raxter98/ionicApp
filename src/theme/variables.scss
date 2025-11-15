@@ -1,2 +1,13 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+// Paleta principal
+:root {
+  --ion-color-primary: #6f2bdc;   /* morado */
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-secondary: #ffd24d; /* amarillo */
+  --ion-color-dark: #222222;
+  --ion-color-light: #f6f7fb;
+  --ion-font-family: 'Arial', sans-serif;
+  --border-radius-base: 10px;
+  --shadow-base: 0 6px 18px rgba(0,0,0,0.08);
+}

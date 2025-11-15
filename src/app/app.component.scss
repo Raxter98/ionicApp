@@ -1,0 +1,37 @@
+@use '../../theme/variables.scss' as *;
+
+ion-app {
+  background: var(--ion-color-light);
+}
+
+/* Top bar / app header estilo global */
+.app-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Logo simple */
+.app-logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.app-logo img {
+  height: 36px;
+  width: 36px;
+  border-radius: 8px;
+}
+
+/* Footer minimal */
+.app-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.5);
+}
