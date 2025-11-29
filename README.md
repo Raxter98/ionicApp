@@ -1,6 +1,6 @@
 📘 README – Proyecto Ionic + Angular (KIKI App)
 ✔ Navegación completa – ✔ Angular Standalone – ✔ Lazy Loading – ✔ Menú lateral
-(Versión corregida según tu implementación actual)
+(Versión corregida según mi implementación actual)
 Este proyecto implementa una arquitectura moderna basada en:
 Ionic 7
 Angular 17 con Standalone Components
@@ -74,7 +74,7 @@ export const routes: Routes = [
 
 🧱 LAYOUT PRINCIPAL (MENÚ LATERAL + OUTLET)
 ✔ app.component.html
-(Versión real, igual a la de tu proyecto: sin lógica, solo estructura)
+
 <ion-app>
   <ion-menu contentId="main-content" side="start">
     <ion-header>
@@ -176,10 +176,10 @@ ion-content {
 
 
 🔄 NOTA IMPORTANTE SOBRE NAVEGACIÓN
-Tu proyecto NO tiene la función go() en AppComponent.
+El proyecto NO tiene la función go() en AppComponent.
 Cada página incluye su propia navegación, ejemplo:
 go('/profile')
-porque tu app.component.ts está así (correcto):
+porque app.component.ts está así (correcto):
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
