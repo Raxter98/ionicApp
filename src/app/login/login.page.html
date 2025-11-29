@@ -1,9 +1,37 @@
-<ion-content class="ion-padding">
-  <h1>LOGIN</h1>
+<ion-content class="login-container">
 
-  <ion-input label="Email" type="email"></ion-input>
-  <ion-input label="Password" type="password"></ion-input>
+  <div class="form-wrapper">
 
-  <ion-button expand="block" (click)="goToDashboard()">Sign In</ion-button>
-  <ion-button fill="clear" expand="block" (click)="goToRegister()">Create Account</ion-button>
+    <div class="field">
+      <label class="field-label">Email</label>
+      <ion-input class="field-input" placeholder="Enter your email" type="email"></ion-input>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Password</label>
+      <ion-input class="field-input" placeholder="Enter your password" type="password"></ion-input>
+
+      <div class="forgot">
+        Forgot your password?
+      </div>
+    </div>
+
+    <ion-button expand="block" class="btn-primary" (click)="goToDashboard()">
+      SIGN IN
+    </ion-button>
+
+    <div class="or">OR</div>
+
+    <ion-button expand="block" class="btn-google">
+      <img src="assets/google-logo.png" class="google-icon">
+      CONTINUE WITH GOOGLE
+    </ion-button>
+
+    <div class="footer-text">
+      ¿Don’t you have an account?
+      <span class="link" (click)="goToRegister()">Create one</span>
+    </div>
+
+  </div>
+
 </ion-content>

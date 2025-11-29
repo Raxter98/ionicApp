@@ -1,3 +1,75 @@
-<ion-content class="ion-padding">
-  <h1>Requests</h1>
+<ion-menu contentId="main-content" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button (click)="go('/requests')">Requests</ion-item>
+      <ion-item button (click)="go('/pending-task')">Pending Tasks</ion-item>
+      <ion-item button (click)="go('/map')">Map</ion-item>
+      <ion-item button (click)="go('/scanner')">Scanner</ion-item>
+      <ion-item button (click)="go('/profile')">Profile</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- MAIN CONTENT -->
+<ion-content id="main-content" class="requests-container ion-padding">
+
+  <!-- Header -->
+  <div class="header">
+    <button class="menu-button" (click)="openMenu()">☰</button>
+
+    <h1 class="logo">KIKI</h1>
+
+    <div class="back-container" (click)="go('/dashboard')">
+      <span class="back-arrow">←</span>
+      <span class="back-text">Back</span>
+    </div>
+  </div>
+
+  <!-- Profile section -->
+  <div class="profile-section">
+    <img src="assets/profile.jpg" class="avatar" />
+
+    <div class="info">
+      <h2 class="name">Marcos Antonio Valero Nieves</h2>
+
+      <div class="rating-row">
+        <span class="rating-value">5</span>
+        <span class="stars">★★★★★</span>
+      </div>
+
+      <div class="bars">
+        <div class="bar-row"><span>5</span><div class="bar"><div class="fill" style="width: 90%"></div></div></div>
+        <div class="bar-row"><span>4</span><div class="bar"><div class="fill" style="width: 60%"></div></div></div>
+        <div class="bar-row"><span>3</span><div class="bar"><div class="fill" style="width: 30%"></div></div></div>
+        <div class="bar-row"><span>2</span><div class="bar"><div class="fill" style="width: 10%"></div></div></div>
+        <div class="bar-row"><span>1</span><div class="bar"><div class="fill" style="width: 5%"></div></div></div>
+      </div>
+
+      <div class="user-code">#12q0w</div>
+    </div>
+  </div>
+
+  <!-- Map Image -->
+  <img src="assets/map-example.jpg" class="map-img" />
+
+  <!-- Buttons -->
+  <div class="button-large" (click)="go('/work-log')">
+    work log
+  </div>
+
+  <div class="button-row">
+    <div class="button-small" (click)="go('/pending-task')">pending tasks</div>
+    <div class="button-small" (click)="go('/requests')">see requests</div>
+  </div>
+
+  <div class="button-search" (click)="go('/search')">
+    search
+  </div>
+
 </ion-content>

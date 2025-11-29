@@ -1,13 +1,55 @@
-<ion-content class="ion-padding">
-  <h1>REGISTER</h1>
+<ion-content class="register-background">
 
-  <ion-input label="Name"></ion-input>
-  <ion-input label="Email"></ion-input>
-  <ion-input label="Password" type="password"></ion-input>
+  <div class="header-container">
+    <h1 class="title">REGISTER</h1>
+  </div>
 
-  <ion-button expand="block">Create Account</ion-button>
+  <div class="register-card">
 
-  <ion-button fill="clear" expand="block" (click)="goLogin()">
-    Back to Login
-  </ion-button>
+    <ion-input label="Name" label-placement="floating"></ion-input>
+
+    <ion-input label="Last Name" label-placement="floating"></ion-input>
+
+    <ion-item>
+      <ion-label position="floating">Date of Birth</ion-label>
+      <ion-datetime presentation="date"></ion-datetime>
+    </ion-item>
+
+    <ion-input label="Email" label-placement="floating" type="email"></ion-input>
+
+    <ion-item>
+      <ion-label>Country</ion-label>
+      <ion-select placeholder="Select country">
+        <ion-select-option value="cl">Chile</ion-select-option>
+        <ion-select-option value="ar">Argentina</ion-select-option>
+        <ion-select-option value="pe">Perú</ion-select-option>
+        <ion-select-option value="mx">México</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-input label="Password" label-placement="floating" type="password"></ion-input>
+
+    <ion-input label="Confirm Password" label-placement="floating" type="password"></ion-input>
+
+    <ion-item>
+      <ion-label>Account Type</ion-label>
+      <ion-select placeholder="Personal or Business">
+        <ion-select-option value="personal">Personal</ion-select-option>
+        <ion-select-option value="business">Business</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="divider">OR</div>
+
+    <ion-button expand="block" fill="outline" class="google-btn">
+      <img src="assets/google-icon.svg" class="google-icon">
+      Sign in with Google
+    </ion-button>
+
+    <ion-button expand="block" class="create-btn">CREATE ACCOUNT</ion-button>
+
+    <ion-button fill="clear" expand="block" (click)="goLogin()">Back to Login</ion-button>
+
+  </div>
+
 </ion-content>

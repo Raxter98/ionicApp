@@ -1,11 +1,87 @@
-<ion-content class="ion-padding">
-  <h1>Dashboard</h1>
+<ion-menu contentId="main-content" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-list>
-    <ion-item button (click)="go('/requests')">Requests</ion-item>
-    <ion-item button (click)="go('/pending-task')">Pending Tasks</ion-item>
-    <ion-item button (click)="go('/map')">Map</ion-item>
-    <ion-item button (click)="go('/scanner')">Scanner</ion-item>
-    <ion-item button (click)="go('/profile')">Profile</ion-item>
-  </ion-list>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item button (click)="go('/pending-task')">Pending Tasks</ion-item>
+      <ion-item button (click)="go('/map')">Map</ion-item>
+      <ion-item button (click)="go('/scanner')">Scanner</ion-item>
+      <ion-item button (click)="go('/profile')">Profile</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- MAIN CONTENT -->
+<ion-content id="main-content" class="dashboard-container">
+
+  <!-- Header con botón de menú -->
+  <div class="header">
+    <button class="menu-button" (click)="openMenu()">☰</button>
+    <h1 class="logo">KIKI</h1>
+  </div>
+
+  <!-- User Profile -->
+  <div class="profile-card">
+    <img src="assets/profile.jpg" class="avatar" />
+
+    <div class="profile-info">
+      <h2 class="name">Marcos Antonio Valero Nieves</h2>
+
+      <div class="rating-row">
+        <span class="rating-value">4,5</span>
+        <span class="stars">★★★★★</span>
+      </div>
+
+      <div class="bars">
+        <div class="bar-row">
+          <span>5</span>
+          <div class="bar"><div class="fill" style="width: 80%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span>4</span>
+          <div class="bar"><div class="fill" style="width: 55%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span>3</span>
+          <div class="bar"><div class="fill" style="width: 30%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span>2</span>
+          <div class="bar"><div class="fill" style="width: 10%"></div></div>
+        </div>
+        <div class="bar-row">
+          <span>1</span>
+          <div class="bar"><div class="fill" style="width: 3%"></div></div>
+        </div>
+      </div>
+
+      <div class="user-code">#12q0w</div>
+    </div>
+  </div>
+
+  <!-- Question -->
+  <h2 class="connect-title">How do you want to connect today?</h2>
+
+  <!-- Worker Banner -->
+  <div class="banner" (click)="go('/requests')">
+    <div class="banner-left">
+      <span>as a</span>
+      <span class="bold">Worker</span>
+    </div>
+    <img src="assets/worker-group.webp" class="banner-img" />
+  </div>
+
+  <!-- Client Banner -->
+  <div class="banner" (click)="go('/requests')">
+    <div class="banner-left">
+      <span>as a</span>
+      <span class="bold">Client</span>
+    </div>
+    <img src="assets/client.jpg" class="banner-img" />
+  </div>
+
 </ion-content>

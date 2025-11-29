@@ -1,38 +1,142 @@
-@use '../../theme/variables.scss' as *;
-
-ion-content {
-  padding: 16px;
+.dashboard-container {
+  padding: 20px;
 }
 
-.welcome {
+/* Header */
+.header {
   display: flex;
-  gap: 12px;
   align-items: center;
-  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 10px;
 }
 
-.user-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
+.menu-icon {
+  font-size: 40px;
+  color: #000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #5b3adb;
+}
+
+/* Profile */
+.profile-card {
   display: flex;
-  gap: 12px;
+  gap: 18px;
+  background: none;
+  padding: 10px 0;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4e3bad;
+}
+
+.rating-row {
+  display: flex;
   align-items: center;
-  box-shadow: var(--shadow-base);
+  gap: 8px;
+  margin: 4px 0;
 }
 
-.actions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 12px;
+.rating-value {
+  font-size: 20px;
+  color: #4e3bad;
 }
 
-.action-tile {
-  background: linear-gradient(180deg, #fff, rgba(255,255,255,0.9));
-  padding: 12px;
-  border-radius: 12px;
+.stars {
+  color: #ffd700;
+  font-size: 16px;
+}
+
+/* Rating bars */
+.bars {
+  margin-top: 6px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar {
+  width: 120px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #4e3bad;
+}
+
+.user-code {
+  margin-top: 6px;
+  color: #d18e00;
+  font-weight: bold;
+}
+
+/* Connect message */
+.connect-title {
+  margin-top: 24px;
+  font-size: 22px;
   text-align: center;
-  box-shadow: var(--shadow-base);
+  font-weight: 700;
+  color: #4a2d9e;
+}
+
+/* Banners */
+.banner {
+  margin-top: 20px;
+  background: #5128d1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 150px;
+  cursor: pointer;
+}
+
+.banner-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  color: white;
+  font-size: 22px;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.banner-img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.menu-button {
+  font-size: 40px;
+  background: none;
+  border: none;
   cursor: pointer;
 }

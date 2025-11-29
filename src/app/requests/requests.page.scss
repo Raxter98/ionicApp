@@ -1,17 +1,150 @@
 @use '../../theme/variables.scss' as *;
 
-ion-content {
+.requests-container {
   padding: 16px;
 }
 
-.list-request {
-  display: grid;
-  gap: 12px;
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.request-item {
-  background: #fff;
-  padding: 12px;
+.menu-button {
+  font-size: 26px;
+  background: transparent;
+  border: none;
+}
+
+.logo {
+  color: #5A32D1;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.back-container {
+  text-align: right;
+  cursor: pointer;
+}
+
+.back-arrow {
+  font-size: 24px;
+}
+
+.back-text {
+  display: block;
+  font-size: 13px;
+  color: #5A32D1;
+}
+
+/* PROFILE SECTION */
+.profile-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+  color: #5A32D1;
+  font-weight: bold;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stars {
+  color: gold;
+}
+
+.bars {
+  margin-top: 5px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bar {
+  width: 100px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #5A32D1;
+}
+
+.user-code {
+  margin-top: 4px;
+  font-weight: bold;
+  color: #F7C600;
+}
+
+/* MAP IMG */
+.map-img {
+  width: 100%;
+  margin: 20px 0;
   border-radius: 12px;
-  box-shadow: var(--shadow-base);
+}
+
+/* BUTTONS */
+.button-large {
+  width: 100%;
+  background: #5A32D1;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.button-small {
+  flex: 1;
+  background: #F7C600;
+  color: #5A32D1;
+  padding: 14px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button-search {
+  margin-top: 25px;
+  width: 100%;
+  padding: 18px;
+  border: 2px solid #F7C600;
+  border-radius: 12px;
+  color: #5A32D1;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  background: white;
 }

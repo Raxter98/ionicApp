@@ -1,193 +1,213 @@
-README – Estructura de Navegación en Angular (KIKI App)
+📘 README – Proyecto Ionic + Angular (KIKI App)
+✔ Navegación completa – ✔ Angular Standalone – ✔ Lazy Loading – ✔ Menú lateral
+(Versión corregida según tu implementación actual)
+Este proyecto implementa una arquitectura moderna basada en:
+Ionic 7
+Angular 17 con Standalone Components
+Lazy loading de páginas
+IonMenu + IonRouterOutlet para navegación con menú lateral
+Pantallas incluidas: Login, Register, Dashboard, Requests, Pending Tasks, Map, Scanner y Profile
 
-REQUISITOS CLAVES PARA EJECUTAR ESTE PROYECTO
 
-Node.js (obligatorio) (ULTIMA VERSIÓN ESTABLE)
+✅ REQUISITOS PARA EJECUTAR EL PROYECTO
+Instalar lo siguiente:
+1. Node.js (versión estable)
+https://nodejs.org/
+2. Ionic CLI
+npm install -g @ionic/cli
+3. Angular CLI (opcional pero recomendado)
+npm install -g @angular/cli
+4. Git
 
-Ionic CLI (obligatorio) (ULTIMA VERSIÓN ESTABLE)
 
-Angular CLI (solo se usa dentro del proyecto, pero recomendada global)
 
-Git (para clonar y subir el proyecto)
-
---------------------------------------------------------------------
-Este proyecto implementa una estructura de navegación modular y escalable en Angular, basada en buenas prácticas y división por pantallas/áreas, permitiendo un desarrollo más organizado y mantenible.
-
+📂 ESTRUCTURA DEL PROYECTO
 src/
- └── app/
-     ├── app.routes.ts
-     ├── app.component.ts
-     ├── app.component.html
-     ├── dashboard/
-     │   ├── dashboard.component.ts
-     │   ├── dashboard.component.html
-     │   └── dashboard.component.scss
-     ├── home/
-     │   ├── home.component.ts
-     │   ├── home.component.html
-     │   └── home.component.scss
-     ├── login/
-     │   ├── login.component.ts
-     │   ├── login.component.html
-     │   └── login.component.scss
-     ├── register/
-         ├── register.component.ts
-         ├── register.component.html
-         └── register.component.scss
-    ...
-    ...
-    ...
+└── app/
+    ├── app.routes.ts
+    ├── app.component.ts
+    ├── app.component.html
+    ├── app.component.scss
+    │
+    ├── dashboard/
+    ├── requests/
+    ├── pending-task/
+    ├── map/
+    ├── scanner/
+    ├── profile/
+    ├── login/
+    └── register/
+Cada carpeta contiene una pantalla completamente independiente, con:
+.page.ts
+.page.html
+.page.scss
 
-Cada carpeta representa una pantalla independiente con su propio componente y estilos.
 
-Cómo ejecutar el proyecto
-
-1 Situarse en la raiz del proyecto
-
+🚀 CÓMO EJECUTAR EL PROYECTO
+Ir a la raíz del proyecto:
 cd kiki
-
-2 Instalar dependencias
-
+Instalar dependencias:
 npm install
-
-3 Ejecutar el servidor local
-
+Ejecutar:
 ionic serve
+La app abrirá automáticamente en el navegador.
 
-La app se abrirá automáticamente
 
-----------------------------------------------------------
-
-Navegación (Routing)
-
-El archivo app.routes.ts define la navegación principal
-
+🧭 SISTEMA DE NAVEGACIÓN (Routing)
+app.routes.ts
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    loadComponent: () => import('./login/login.page').then(m => m.LoginPage)
-  },
-  {
-    path: 'register',
-    loadComponent: () => import('./register/register.page').then(m => m.RegisterPage)
-  },
-  {
-    path: 'dashboard',
-    loadComponent: () => import('./dashboard/dashboard.page').then(m => m.DashboardPage)
-  }...
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  { path: 'login', loadComponent: () => import('./login/login.page').then(m => m.LoginPage) },
+  { path: 'register', loadComponent: () => import('./register/register.page').then(m => m.RegisterPage) },
+
+  { path: 'dashboard', loadComponent: () => import('./dashboard/dashboard.page').then(m => m.DashboardPage) },
+  { path: 'requests', loadComponent: () => import('./requests/requests.page').then(m => m.RequestsPage) },
+  { path: 'pending-task', loadComponent: () => import('./pending-task/pending-task.page').then(m => m.PendingTaskPage) },
+  { path: 'map', loadComponent: () => import('./map/map.page').then(m => m.MapPage) },
+  { path: 'scanner', loadComponent: () => import('./scanner/scanner.page').then(m => m.ScannerPage) },
+  { path: 'profile', loadComponent: () => import('./profile/profile.page').then(m => m.ProfilePage) },
+];
 
 
--------------------------------------------------------------------
-Estilos
+🧱 LAYOUT PRINCIPAL (MENÚ LATERAL + OUTLET)
+✔ app.component.html
+(Versión real, igual a la de tu proyecto: sin lógica, solo estructura)
+<ion-app>
+  <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-Cada componente posee su propio archivo .scss, por ejemplo:
+    <ion-content>
+      <ion-list>
+        <ion-item button routerLink="/requests">Requests</ion-item>
+        <ion-item button routerLink="/pending-task">Pending Tasks</ion-item>
+        <ion-item button routerLink="/map">Map</ion-item>
+        <ion-item button routerLink="/scanner">Scanner</ion-item>
+        <ion-item button routerLink="/profile">Profile</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-/* home.component.scss */
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>
+
+
+
+
+🎬 BOTÓN DE MENÚ PARA CADA PÁGINA
+Esto debe agregarse en todas las páginas que necesitan abrir el menú:
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+📄 EJEMPLO COMPLETO DE UNA PÁGINA
+✔ RequestsPage (versión correcta)
+requests.page.ts
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { IonicModule, MenuController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-requests',
+  standalone: true,
+  imports: [IonicModule],
+  templateUrl: './requests.page.html',
+  styleUrls: ['./requests.page.scss']
+})
+export class RequestsPage {
+
+  constructor(
+    private router: Router,
+    private menu: MenuController
+  ) {}
+
+  go(path: string) {
+    this.router.navigate([path]);
+  }
+
+  openMenu() {
+    this.menu.open();
+  }
+}
+requests.page.html
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Requests</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Requests</h1>
+</ion-content>
+
+requests.page.scss
 @use '../../theme/variables.scss' as *;
 
 ion-content {
-  --background: transparent;
-  padding: 18px;
+  padding: 16px;
 }
 
-.hero {
+.list-request {
   display: grid;
   gap: 12px;
 }
 
-.banner {
-  background: linear-gradient(90deg, var(--ion-color-primary), #8540e0);
-  color: #fff;
-  padding: 18px;
-  border-radius: 14px;
+.request-item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
   box-shadow: var(--shadow-base);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-Nota: Los estilos incluidos son básicos y solo cumplen un propósito demostrativo.
-No representan el diseño oficial final
 
------------------------------------------------------------------------
+🔄 NOTA IMPORTANTE SOBRE NAVEGACIÓN
+Tu proyecto NO tiene la función go() en AppComponent.
+Cada página incluye su propia navegación, ejemplo:
+go('/profile')
+porque tu app.component.ts está así (correcto):
+import { Component } from '@angular/core';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
-Cómo agregar nuevas pantallas
-
-1. Crear una carpeta dentro de app/
-Ejemplo: products/
-
-2.Generar el componente:
-ng generate component products
-
-3.Agregar la ruta en app.routes.ts:
-{ path: 'products', component: ProductsComponent }
-
-
-----------------------------------------------------------------------
-
-✅ Problemas enfrentados
-
-1. Diferencias entre la estructura original y la generada por Ionic
-
-Al crear el proyecto con ionic start, la estructura generada por defecto no coincidía con el diseño planificado en la unidad 2.
-
-Fue necesario reorganizar carpetas, crear componentes y ajustar rutas para que coincidieran conceptualmente con el mapa de navegación.
-
-2. Configuración inicial de Angular CLI
-
-Al ejecutar ionic serve, surgió el error "ng no se reconoce como un comando", porque el proyecto no estaba identificado como workspace.
-
-Esto obligó a crear un proyecto Ionic completamente nuevo y sobre él integrar manualmente la estructura de navegación.
-
-3. Enrutamiento y lazy loading
-
-El sistema de rutas de Ionic utiliza lazy loading para mejorar el rendimiento.
-
-Fue necesario comprender la estructura con módulos independientes por página (home.module.ts, login.module.ts, etc.) para implementar la navegación correctamente.
-
-4. Problemas de compatibilidad entre Angular e Ionic
-
-Algunas importaciones necesarias para los componentes (IonMenu, IonRouterOutlet, IonHeader, etc.) requirieron revisar documentación actualizada.
-
-Fue necesario corregir importaciones duplicadas o incorrectas generadas por defecto.
-
-5. Estilos no aplicados
-
-Los estilos base debían instalarse manualmente porque el proyecto no incluía el CSS global.
-
-Hubo que crear los archivos .scss faltantes y aplicar estilos mínimos para mantener coherencia con el diseño conceptual.
-
-6. Organización del proyecto para que el profesor pueda ejecutarlo
-
-El proyecto debía funcionar sin requerir instalaciones adicionales.
-
-Fue necesario crear un README detallado explicando dependencias, comandos de instalación y estructura de carpetas.
-
-7. Estructura real del diseño vs. prototipo
-
-El diseño visual original no se replicó en esta fase porque la tarea exige solo la “cáscara” de navegación.
-
-Esto obligó a separar funcionalidad de diseño y dejar placeholders en las vistas.
-
--------------------------------------------------------------------
-
-Conclusión
-
-Este repositorio te entrega:
-
-✔ Una estructura modular y escalable
-✔ Navegación configurada y funcionando
-✔ Layout base con header / contenido / footer
-✔ Carpetas organizadas por pantalla
-✔ Archivos listos para expandir
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  imports: [IonApp, IonRouterOutlet],
+})
+export class AppComponent {}
+Esto está documentado ahora en el README.
 
 
-❗ El diseño visual NO está finalizado.
-El objetivo de este proyecto es entregar la estructura de navegación funcional, no la apariencia final.
+❗ PROBLEMAS ENFRENTADOS (DOCUMENTADO PARA EL PROFESOR)
+Estructura inicial de Ionic distinta a la requerida
+Necesidad de usar Angular 17 con Standalone (sin módulos)
+Lazy loading obligatorio
+Importación manual de IonMenu, IonRouterOutlet, IonHeader
+Errores de navegación por ausencia de funciones (go(), openMenu())
+Reorganización completa de carpetas
+Los diseños finales no forman parte de esta entrega (solo estructura navegable)
+
+
+🎯 CONCLUSIÓN
+Este repositorio entrega:
+✔ Menú lateral funcional
+✔ Navegación profesional
+✔ Rutas con lazy loading
+✔ App estructurada por pantallas independientes
+✔ Componentes standalone (Angular 17)
+✔ Código limpio, comprensible y correcto
+✔ README listo para presentar a un profesor
