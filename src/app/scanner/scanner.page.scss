@@ -1,15 +1,64 @@
-@use '../../theme/variables.scss' as *;
-
-ion-content {
-  padding: 16px;
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #5C2ED1;
+  margin-bottom: 28px;
 }
 
-.scanner-area {
-  height: 320px;
-  background: linear-gradient(180deg, rgba(111,43,220,0.08), rgba(255,210,77,0.04));
-  border-radius: 12px;
+.big-button {
+  width: 80%;
+  margin: auto;
+  padding: 18px 0;
+  font-size: 32px;
+  border-radius: 14px;
+  border: 3px solid #FFCF26;
+  background: none;
+  color: #5C2ED1;
+  display: block;
+}
+
+.main-menu-btn {
+  background: #5C2ED1;
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+.divider {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+
+  .star {
+    color: #FFCF26;
+    font-size: 44px;
+  }
+}
+
+.header-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-base);
+  justify-content: space-between;
+  margin: 10px 0;
+
+  h2 {
+    font-size: 26px;
+    color: #5C2ED1;
+    font-weight: 700;
+  }
+
+  .search-id-btn {
+    border: 2px solid #FFCF26;
+    padding: 6px 12px;
+    border-radius: 14px;
+    background: none;
+    color: #5C2ED1;
+    font-size: 14px;
+  }
+}
+
+.request-list {
+  margin-top: 12px;
 }

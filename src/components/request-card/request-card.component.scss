@@ -1,0 +1,87 @@
+.request-card {
+  background: #8257e6;
+  border-radius: 18px;
+  padding: 16px;
+  color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.22);
+  width: 100%;
+  position: relative;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+}
+
+.category {
+  background: #ffe600;
+}
+
+.priority {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* TITLE */
+.title {
+  margin: 12px 0 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 13px;
+  line-height: 1.35;
+  opacity: 0.95;
+  margin-bottom: 16px;
+}
+
+/* BOTTOM ROW */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.left ion-icon {
+  font-size: 18px;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}

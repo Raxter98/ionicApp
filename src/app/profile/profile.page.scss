@@ -1,26 +1,124 @@
 @use '../../theme/variables.scss' as *;
 
 ion-content {
+  --background: #fff;
   padding: 16px;
 }
 
-.profile-header {
+/* HEADER */
+.header {
   display: flex;
-  gap: 12px;
+  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 12px;
+  padding: 8px 0;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.edit {
+  font-size: 14px;
+  color: #6c47ff;
+}
+
+/* PROFILE */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .avatar {
-  height: 80px;
-  width: 80px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, var(--ion-color-primary), #7b4be8);
+  width: 85px;
+  height: 85px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #4a2bbc;
+  margin: 0;
+}
+
+.rating-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff;
+  margin-top: 4px;
 }
-.profile-details {
-  flex: 1;
+
+.rating-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.star {
+  color: #ffce00;
+  font-size: 18px;
+}
+
+.userid {
+  color: #c77dff;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.trophy {
+  font-size: 40px;
+  color: #4a2bbc;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 24px 0;
+  color: #4a2bbc;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  margin-top: 12px;
+}
+
+.grid .card:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* CARD */
+.card {
+  border: 2px dashed #b384ff;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.card-title {
+  margin-top: 12px;
+  color: #4a2bbc;
+  font-weight: 700;
+  font-size: 18px;
 }

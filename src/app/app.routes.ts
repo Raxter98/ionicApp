@@ -30,10 +30,7 @@ export const routes: Routes = [
     path: 'profile',
     loadComponent: () => import('./profile/profile.page').then(m => m.ProfilePage)
   },
-  {
-    path: 'map',
-    loadComponent: () => import('./map/map.page').then(m => m.MapPage)
-  },
+ 
   {
     path: 'scanner',
     loadComponent: () => import('./scanner/scanner.page').then(m => m.ScannerPage)

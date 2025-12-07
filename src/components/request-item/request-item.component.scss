@@ -1,0 +1,62 @@
+.request-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 4px;
+  border-bottom: 2px solid #C7B6FF;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+}
+
+.top-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #5C2ED1;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+  }
+}
+
+.rating {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .rating-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: #5C2ED1;
+  }
+
+  .stars {
+    color: #FFCF26;
+    font-size: 18px;
+  }
+}
+
+.desc {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+}

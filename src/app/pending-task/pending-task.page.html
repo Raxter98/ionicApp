@@ -1,3 +1,48 @@
 <ion-content class="ion-padding">
-  <h1>Pending Task</h1>
+
+  <h1>Requests</h1>
+
+  <div class="pending-list">
+
+    <app-request-card
+      category="Plumbing"
+      tag="Urgent"
+      title="Disaster in my plumbing"
+      description="I need a plumber to fix several defects in my plumbing system..."
+      [tasks]="0"
+      [totalTasks]="7"
+      date="Sep 29"
+      userName="María"
+      [userRate]="6"
+      userAvatar="../../assets/profile.jpg"
+    ></app-request-card>
+
+    <app-request-card
+      category="Plumbing"
+      tag="Postponeable"
+      title="Routine maintenance"
+      description="I need a plumber to fix several defects in my plumbing system..."
+      [tasks]="0"
+      [totalTasks]="3"
+      date="Sep 10"
+      userName="José"
+      [userRate]="4"
+      userAvatar="../../assets/profile.jpg"
+    ></app-request-card>
+
+    <app-request-card
+      category="Plumbing"
+      tag="Important"
+      title="Fix leak"
+      description="I need a plumber to fix several defects in my plumbing system..."
+      [tasks]="0"
+      [totalTasks]="5"
+      date="Sep 15"
+      userName="Fernando"
+      [userRate]="2"
+      userAvatar="../../assets/profile.jpg"
+    ></app-request-card>
+
+  </div>
+
 </ion-content>

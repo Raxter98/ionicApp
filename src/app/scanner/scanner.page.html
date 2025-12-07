@@ -1,3 +1,29 @@
-<ion-content class="ion-padding">
-  <h1>Scanner</h1>
+<ion-content>
+
+  <h1>I need it right now</h1>
+
+  <button class="big-button">search</button>
+
+  <button class="main-menu-btn">Go to main menu</button>
+
+  <div class="divider">
+    <ion-icon name="star" class="star"></ion-icon>
+  </div>
+
+  <div class="header-row">
+    <h2>Make a request</h2>
+    <button class="search-id-btn">search by id or name</button>
+  </div>
+
+  <div class="request-list">
+    <app-request-item
+      *ngFor="let item of requests"
+      [photo]="item.photo"
+      [name]="item.name"
+      [role]="item.role"
+      [rating]="item.rating"
+      [description]="item.description"
+    />
+  </div>
+
 </ion-content>
